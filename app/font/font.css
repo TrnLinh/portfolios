@@ -1,0 +1,68 @@
+/* Font: Chopin-Trial */
+/*regular*/
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Chopin-Trial-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Chopin-Trial-RegularItalic.ttf) format("truetype");
+}
+
+/*Medium*/
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(./Chopin-Trial-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(./Chopin-Trial-MediumItalic.ttf) format("truetype");
+}
+
+/*SemiBold*/
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./Chopin-Trial-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./Chopin-Trial-SemiBoldItalic.ttf) format("truetype");
+}
+
+/*Bold*/
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(./Chopin-Trial-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(./Chopin-Trial-BoldItalic.ttf) format("truetype");
+}
