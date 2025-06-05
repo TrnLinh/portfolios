@@ -2,6 +2,7 @@ import { PageTransition } from "../layout/PageTransition";
 import AnimatedBlob from "../component/AnimatedBlob";
 import { Link } from "react-router";
 import { HiArrowRight } from "react-icons/hi";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export function About() {
   return (
@@ -54,7 +55,7 @@ export function About() {
       </section>
       <section className='min-h-lvh px-4 overflow-x-hidden '>
         <div className='gap-3 flex flex-col mt-12 border-b-1 border-neutral-200 py-3'>
-          <h1 className='font-body text-4xl font-medium leading-[100%]'>
+          <h1 className='font-body text-[clamp(2.25rem,1.971rem+1.143vw,3rem)] font-medium leading-[100%]'>
             Feature Works.
           </h1>
           <Link
@@ -67,11 +68,8 @@ export function About() {
         </div>
         <div>
           {worksList.map((work) => (
-            <div key={work.title} className='mt-6'>
-              <Link
-                to={work.link}
-                className='flex flex-col items-start gap-4 mb-6'
-              >
+            <div key={work.title} className='mt-6 mb-8'>
+              <Link to={work.link} className='flex flex-col items-start gap-4 '>
                 <div className='h-56 w-full rounded-sm ring-2 ring-neutral-100 object-bottom  overflow-hidden relative'>
                   <img
                     src={work.image}
@@ -94,30 +92,115 @@ export function About() {
           ))}
         </div>
       </section>
+      <section className='min-h-lvh px-4 overflow-x-hidden py-16'>
+        <div className='flex flex-col gap-6'>
+          <div>
+            <h1 className='text-[clamp(2.25rem,1.971rem+1.143vw,3rem)] font-body font-medium '>
+              Techniques & Skill.
+            </h1>
+          </div>
+          <div>
+            {Object.entries(skillTree).map(([category, skills], index) => (
+              <div
+                key={category}
+                className={`grid grid-cols-[25%_75%] gap-6 mb-8 ${
+                  index !== Object.entries(skillTree).length - 1
+                    ? "border-b border-neutral-200 pb-8"
+                    : ""
+                }`}
+              >
+                <h2 className='text-sm text-neutral-500 leading font-medium'>
+                  {category}
+                </h2>
+                <div className='ml-6 border-l-[1px] border-neutral-200 pl-4 flex flex-col gap-2'>
+                  {skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className='text-neutral-900 font-body font-medium leading-6'
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className='px-4 overflow-x-hidden py-8'>
+        <div>
+          <div>
+            <h1 className='text-[clamp(2.25rem,1.6rem+2.667vw,4rem)] font-medium'>
+              Say Hi.
+            </h1>
+            <p className='font-normal text-sm leading-[120%] tracking-[0.6px] text-neutral-900 '>
+              Hey, my chat box is always open if you want to discuss about
+              anything... literally anything.
+            </p>
+          </div>
+          <div className='flex flex-col gap-4 mt-4'>
+            <h2 className='text-[clamp(1.5rem,0.943rem+2.286vw,3rem)] font-body font-medium'>
+              rintrnn@gmail.com
+            </h2>
+            <p className='text-sm font-medium text-neutral-500'>
+              Or you can fine me at:
+            </p>
+            <div className='grid place-items-center  gap-2'>
+              <Link
+                className='ring-1 rounded-sm ring-neutral-200 w-full flex flex-row gap-2 items-center justify-center p-3'
+                to=''
+              >
+                <FaInstagram /> <span>Instagram</span>
+              </Link>
+              <span className='block'>-</span>
+              <Link
+                className='ring-1 rounded-sm ring-neutral-200 w-full flex flex-row gap-2 items-center justify-center p-3'
+                to=''
+              >
+                <FaLinkedin /> <span>LinkedIn</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </PageTransition>
   );
 }
 
 const worksList = [
   {
-    title: "Work 1",
+    title: "KrunkerCSS",
     projectType: "Public Project",
     image: "images/krunkercss.png",
     description: "A CSS library that is used to style the Krunker.io game.",
     link: "/work1",
   },
   {
-    title: "Work 2",
+    title: "Muck",
     projectType: "School Project",
     image: "/images/work2.png",
     description: "A forum, e-commerce website for video games. ",
     link: "/work2",
   },
   {
-    title: "Work 3",
+    title: "SenMe",
     projectType: "Private Project",
     image: "/images/work3.png",
     description: "Description of work 3",
     link: "/work3",
   },
 ];
+
+const skillTree = {
+  Language: ["JavaScript", "TypeScript", "Python", "Java", "HTML5", "CSS3"],
+  Frameworks: ["React", "Springboot", "NodeJs", "JavaFx"],
+  Library: ["TailwindCSS", "Bootstrap", "ShadcnUI"],
+  Skill: [
+    "UI/UX Design",
+    "Web Development",
+    "Software Engineering",
+    "Wireframing",
+    "Prototyping",
+  ],
+  Tools: ["Figma", "Git", "VSCode", "Postman", "Docker"],
+};

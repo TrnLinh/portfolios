@@ -16,6 +16,22 @@
   src: url(./Chopin-Trial-RegularItalic.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./Chopin-Trial-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Chopin-Trial";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./Chopin-Trial-MediumItalic.ttf) format("truetype");
+}
+
 /*Medium*/
 @font-face {
   font-family: "Chopin-Trial";

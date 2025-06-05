@@ -12,6 +12,10 @@ export function Nav() {
     setIsOpen((prevState) => !prevState);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   React.useEffect(() => {
     // Animate the menu
     if (menuRef.current) {
@@ -73,7 +77,7 @@ export function Nav() {
       <nav className='w-[calc(100%-2rem)] top-4 left-1/2 -translate-x-1/2 fixed right-0 z-50'>
         <div className='flex justify-between ring-2 ring-neutral-100 items-center bg-neutral-0 px-3 relative py-4 rounded max-h-11'>
           <div>
-            <Link to='/'>
+            <Link to='/' onClick={closeMenu}>
               <svg
                 width='24'
                 height='13'
@@ -107,8 +111,12 @@ export function Nav() {
               }}
               className='space-y-2 absolute w-full top-[calc(100%+12px)] rounded ring-1 ring-neutral-100 left-0 p-4 font-semibold bg-neutral-0'
             >
-              <NavItem href='/about'>About</NavItem>
-              <NavItem href='/works'>Works</NavItem>
+              <NavItem href='/about' onClick={closeMenu}>
+                About
+              </NavItem>
+              <NavItem href='/works' onClick={closeMenu}>
+                Works
+              </NavItem>
             </ul>
           </div>
         </div>
@@ -120,14 +128,16 @@ export function Nav() {
 interface NavItemProps {
   href: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ href, children }) => {
+const NavItem: React.FC<NavItemProps> = ({ href, children, onClick }) => {
   return (
     <li className='text-base text-neutral-1000 w-full'>
       <NavLink
         className='block py-1 w-full hover:text-neutral-700 transition-colors'
         to={href}
+        onClick={onClick}
       >
         {children}
       </NavLink>
