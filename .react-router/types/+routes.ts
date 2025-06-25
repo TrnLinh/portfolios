@@ -30,6 +30,10 @@ type RouteFiles = {
     id: "layout/MainLayout";
     page: "/" | "/about" | "/works";
   };
+  "routes/home.tsx": {
+    id: "routes/home";
+    page: "/";
+  };
   "routes/about.tsx": {
     id: "routes/about";
     page: "/about";

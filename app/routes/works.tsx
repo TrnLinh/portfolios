@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
     { name: "description", content: "Welcome to Works!" },
   ];
 }
-export default function Link1Route() {
+export default function WorksRoute() {
   return (
     <>
       <Works />

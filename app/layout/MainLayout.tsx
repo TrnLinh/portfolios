@@ -4,7 +4,7 @@ import { Nav } from "../component/Nav";
 export default function MainLayout() {
   return (
     <>
-      <section>
+      <section className='max-w-[1440px] mx-auto'>
         <Nav />
         <Outlet />
       </section>

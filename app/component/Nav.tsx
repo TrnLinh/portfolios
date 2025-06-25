@@ -17,7 +17,7 @@ export function Nav() {
   };
 
   React.useEffect(() => {
-    // Animate the menu
+    // Mobile menu animation
     if (menuRef.current) {
       if (isOpen) {
         gsap.to(menuRef.current, {
@@ -42,7 +42,7 @@ export function Nav() {
       }
     }
 
-    // Animate the overlay
+    // Mobile overlay animation
     if (overlayRef.current) {
       if (isOpen) {
         gsap.to(overlayRef.current, {
@@ -68,15 +68,17 @@ export function Nav() {
 
   return (
     <>
+      {/* Mobile overlay */}
       <div
         ref={overlayRef}
         onClick={handleToggle}
-        className='fixed inset-0 bg-gray-50/25 backdrop-blur-sm z-40'
+        className='fixed inset-0 bg-gray-50/25 backdrop-blur-sm z-40 lg:hidden'
         style={{ opacity: 0, display: "none" }}
       />
-      <nav className='w-[calc(100%-2rem)] top-4 left-1/2 -translate-x-1/2 fixed right-0 z-50'>
+      <nav className='w-[calc(100%-2rem)] max-w-[1440px] top-4 left-1/2 -translate-x-1/2 fixed z-50 right-0 '>
         <div className='flex justify-between ring-2 ring-neutral-100 items-center bg-neutral-0 px-3 relative py-4 rounded max-h-11'>
-          <div>
+          {/* Logo */}
+          <div className='relative z-50'>
             <Link to='/' onClick={closeMenu}>
               <svg
                 width='24'
@@ -92,11 +94,17 @@ export function Nav() {
               </svg>
             </Link>
           </div>
-          <div className='flex flex-row'>
+          {/* Desktop Navigation */}
+          <div className='hidden lg:flex space-x-8 items-center *:list-none relative'>
+            <NavItem href='/about'>About</NavItem>
+            <NavItem href='/works'>Works</NavItem>
+          </div>
+          {/* Mobile Navigation */}
+          <div className='lg:hidden '>
             <button
               onClick={handleToggle}
               type='button'
-              className='block text-neutral-1000 font-semibold p-1 pointer-events-auto z-999 relative'
+              className='block text-neutral-1000 font-semibold p-1 pointer-events-auto z-50 relative'
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
             >
