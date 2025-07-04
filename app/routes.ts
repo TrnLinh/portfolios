@@ -6,4 +6,6 @@ export default [
     route("about", "routes/about.tsx"),
     route("works", "routes/works.tsx"),
   ]),
+  // Catch-all route for DevTools and other unmatched requests
+  route("*", "routes/404.tsx"),
 ] satisfies RouteConfig;

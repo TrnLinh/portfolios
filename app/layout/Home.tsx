@@ -21,7 +21,7 @@ export function Home() {
     <PageTransition>
       <section className='flex flex-col items-center justify-center min-h-lvh px-4 2xl:px-0 overflow-x-hidden '>
         <div className='p-4 rounded-sm border-2  border-neutral-100 h-[calc(100vh-6rem)] mt-14 grid grid-rows-12 grid-cols-1 md:grid-cols-12 relative test-bg xl:grid-rows-11'>
-          {/* <div className='absolute top-[40%] w-full left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden'>
+          <div className='absolute top-[40%] w-full left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden'>
             <ParticleSphere
               color={color}
               particleCount={particleCount}
@@ -33,10 +33,10 @@ export function Home() {
               waveAmplitude={waveAmplitude}
               opacity={opacity}
             />
-          </div> */}
-          <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 overflow test-bg'>
-            <AnimatedBlob className='size-56 ' />
           </div>
+          {/* <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 overflow test-bg'>
+            <AnimatedBlob className='size-56 ' />
+          </div> */}
           <div className='text-[clamp(1.25rem,0.879rem+1.524vw,2.25rem)] font-medium row-start-9 z-10 md:col-span-10 lg:col-span-8 xl:col-span-7'>
             A student who has goals and dreams to achieve, with a journey to
             finish, lessons to learn, and a drive to bring technology closer to
